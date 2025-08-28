@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Aspirants Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .dashboard-container {
+            min-height: 100vh;
+            background: var(--background-dark);
+            padding-top: 80px;
+        }
+        
+        .dashboard-header {
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem 0;
+        }
+        
+        .dashboard-header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .welcome-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .welcome-section p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+        
+        .user-info {
+            text-align: right;
+        }
+        
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), #e63939);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 0.5rem;
+        }
+        
+        .dashboard-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), #e63939);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .dashboard-sections {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        .main-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .section-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .booking-card {
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid rgba(255, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .booking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .seat-btn {
+            padding: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .seat-btn:hover {
+            border-color: var(--primary-color);
+            background: rgba(255, 68, 68, 0.1);
+        }
+        
+        .seat-btn.occupied {
+            background: rgba(255, 68, 68, 0.3);
+            border-color: var(--primary-color);
+            cursor: not-allowed;
+        }
+        
+        .seat-btn.selected {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .payment-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .payment-info h4 {
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+        
+        .payment-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .payment-amount {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+        
+        .achievement-badge {
+            background: rgba(255, 204, 0, 0.1);
+            border: 1px solid rgba(255, 204, 0, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .achievement-badge:hover {
+            transform: scale(1.05);
+        }
+        
+        .achievement-badge.locked {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+            opacity: 0.5;
+        }
+        
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-yellow);
+        }
+        
+        .achievement-badge.locked .achievement-icon {
+            color: var(--text-gray);
+        }
+        
+        .achievement-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .profile-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .info-label {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .info-value {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .action-btn {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .action-btn:hover {
+            background: rgba(255, 68, 68, 0.1);
+            border-color: var(--primary-color);
+        }
+        
+        .empty-state {
+            text-align: center;
+            color: var(--text-gray);
+            padding: 2rem;
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-sections {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+            
+            .booking-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .welcome-section h1 {
+                font-size: 2rem;
+            }
+            
+            .booking-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .achievement-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>ASPIRANTS <span class="text-red">LIBRARY</span></h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link">My Profile</a>
+                <button class="btn btn-secondary" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <div class="dashboard-header-content">
+                <div class="welcome-section">
+                    <h1>Welcome back, <span class="text-red" id="studentName">Student</span>!</h1>
+                    <p>Continue your journey towards academic excellence</p>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 id="studentEmail">student@email.com</h3>
+                    <p class="text-gray">Member since <span id="memberSince">2024</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Main Content -->
+        <div class="dashboard-main">
+            <!-- Stats Grid -->
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number" id="totalStudyHours">0</div>
+                    <div class="stat-label">Study Hours</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-number" id="totalBookings">0</div>
+                    <div class="stat-label">Total Bookings</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-number" id="achievementCount">0</div>
+                    <div class="stat-label">Achievements</div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Sections -->
+            <div class="dashboard-sections">
+                <!-- Main Section -->
+                <div class="main-section">
+                    <!-- Seat Booking Section -->
+                    <div class="section-card">
+                        <h2 class="section-title">
+                            <i class="fas fa-chair"></i>
+                            Book Your Seat
+                        </h2>
+                        
+                        <div class="booking-card">
+                            <h3>Available Seats</h3>
+                            <p class="text-gray">Select your preferred seat for today's study session</p>
+                            
+                            <div class="booking-grid" id="seatGrid">
+                                <!-- Seats will be generated here -->
+                            </div>
+                            
+                            <div style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center;">
+                                <button class="btn btn-primary" onclick="bookSelectedSeat()" id="bookSeatBtn" disabled>
+                                    <i class="fas fa-check"></i> Book Selected Seat
+                                </button>
+                                <button class="btn btn-secondary" onclick="cancelBooking()" id="cancelBookingBtn" style="display: none;">
+                                    <i class="fas fa-times"></i> Cancel Booking
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Current Booking Section -->
+                    <div class="section-card" id="currentBookingSection" style="display: none;">
+                        <h2 class="section-title">
+                            <i class="fas fa-bookmark"></i>
+                            Current Booking
+                        </h2>
+                        
+                        <div class="booking-card">
+                            <div id="currentBookingInfo">
+                                <!-- Current booking info will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment History Section -->
+                    <div class="section-card">
+                        <h2 class="section-title">
+                            <i class="fas fa-history"></i>
+                            Payment History
+                        </h2>
+                        
+                        <div id="paymentHistory">
+                            <!-- Payment history will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Section -->
+                <div class="sidebar-section">
+                    <!-- Profile Info -->
+                    <div class="section-card">
+                        <h3 class="section-title">
+                            <i class="fas fa-user-circle"></i>
+                            Profile Info
+                        </h3>
+                        
+                        <div class="profile-info" id="profileInfo">
+                            <!-- Profile info will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="section-card">
+                        <h3 class="section-title">
+                            <i class="fas fa-bolt"></i>
+                            Quick Actions
+                        </h3>
+                        
+                        <div class="quick-actions">
+                            <a href="#" class="action-btn" onclick="showPricingPlans()">
+                                <i class="fas fa-credit-card"></i>
+                                Buy Plan
+                            </a>
+                            <a href="#" class="action-btn" onclick="contactSupport()">
+                                <i class="fas fa-headset"></i>
+                                Support
+                            </a>
+                            <a href="#" class="action-btn" onclick="downloadLibraryCard()">
+                                <i class="fas fa-id-card"></i>
+                                Library Card
+                            </a>
+                            <a href="#" class="action-btn" onclick="viewRules()">
+                                <i class="fas fa-book"></i>
+                                Rules
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Badges -->
+                    <div class="section-card">
+                        <h3 class="section-title">
+                            <i class="fas fa-medal"></i>
+                            Achievements
+                        </h3>
+                        
+                        <div class="achievement-grid">
+                            <div class="achievement-badge" id="firstDayBadge">
+                                <div class="achievement-icon">🎯</div>
+                                <div class="achievement-name">First Day</div>
+                            </div>
+                            
+                            <div class="achievement-badge locked" id="weeklyWarriorBadge">
+                                <div class="achievement-icon">🔥</div>
+                                <div class="achievement-name">Weekly Warrior</div>
+                            </div>
+                            
+                            <div class="achievement-badge locked" id="monthlyMasterBadge">
+                                <div class="achievement-icon">👑</div>
+                                <div class="achievement-name">Monthly Master</div>
+                            </div>
+                            
+                            <div class="achievement-badge locked" id="earlyBirdBadge">
+                                <div class="achievement-icon">🌅</div>
+                                <div class="achievement-name">Early Bird</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        let currentUser = null;
+        let selectedSeat = null;
+        let currentBooking = null;
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            checkStudentAuth();
+            loadStudentData();
+            generateSeatGrid();
+            loadDashboardData();
+        });
+
+        function checkStudentAuth() {
+            const savedUser = localStorage.getItem('currentUser');
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            
+            if (!savedUser || !isLoggedIn) {
+                showAlert('Please login to access your dashboard', 'error');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+                return;
+            }
+            
+            currentUser = JSON.parse(savedUser);
+            
+            if (currentUser.role === 'admin') {
+                window.location.href = 'admin.html';
+                return;
+            }
+        }
+
+        function loadStudentData() {
+            if (!currentUser) return;
+            
+            // Update header info
+            document.getElementById('studentName').textContent = currentUser.name || 'Student';
+            document.getElementById('studentEmail').textContent = currentUser.email;
+            
+            if (currentUser.registeredAt) {
+                const registrationDate = new Date(currentUser.registeredAt);
+                document.getElementById('memberSince').textContent = registrationDate.getFullYear();
+            }
+            
+            // Load profile info
+            loadProfileInfo();
+        }
+
+        function loadProfileInfo() {
+            const profileInfo = document.getElementById('profileInfo');
+            
+            profileInfo.innerHTML = `
+                <div class="info-item">
+                    <span class="info-label">Phone</span>
+                    <span class="info-value">${currentUser.phone || 'Not provided'}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Qualification</span>
+                    <span class="info-value">${currentUser.qualification || 'Not specified'}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Exam Prep</span>
+                    <span class="info-value">${currentUser.examPreparation || 'General Study'}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Status</span>
+                    <span class="info-value" style="color: #4CAF50;">Active</span>
+                </div>
+            `;
+        }
+
+        function generateSeatGrid() {
+            const seatGrid = document.getElementById('seatGrid');
+            const totalSeats = 91;
+            const occupiedSeats = generateRandomOccupiedSeats(15); // 15 randomly occupied seats
+            
+            let seatHTML = '';
+            for (let i = 1; i <= totalSeats; i++) {
+                const isOccupied = occupiedSeats.includes(i);
+                const seatClass = isOccupied ? 'seat-btn occupied' : 'seat-btn';
+                const onclick = isOccupied ? '' : `onclick="selectSeat(${i})"`;
+                
+                seatHTML += `
+                    <div class="${seatClass}" id="seat-${i}" ${onclick}>
+                        ${i}${isOccupied ? '<br><small>Occupied</small>' : ''}
+                    </div>
+                `;
+            }
+            
+            seatGrid.innerHTML = seatHTML;
+        }
+
+        function generateRandomOccupiedSeats(count) {
+            const occupied = [];
+            while (occupied.length < count) {
+                const seat = Math.floor(Math.random() * 91) + 1;
+                if (!occupied.includes(seat)) {
+                    occupied.push(seat);
+                }
+            }
+            return occupied;
+        }
+
+        function selectSeat(seatNumber) {
+            // Deselect previous seat
+            if (selectedSeat) {
+                document.getElementById(`seat-${selectedSeat}`).classList.remove('selected');
+            }
+            
+            // Select new seat
+            selectedSeat = seatNumber;
+            document.getElementById(`seat-${seatNumber}`).classList.add('selected');
+            document.getElementById('bookSeatBtn').disabled = false;
+        }
+
+        function bookSelectedSeat() {
+            if (!selectedSeat) {
+                showAlert('Please select a seat first', 'error');
+                return;
+            }
+            
+            // Create booking
+            currentBooking = {
+                seatNumber: selectedSeat,
+                date: new Date().toISOString(),
+                startTime: new Date().toLocaleTimeString(),
+                userId: currentUser.id || currentUser.email,
+                status: 'active'
+            };
+            
+            // Save booking to localStorage
+            const bookings = JSON.parse(localStorage.getItem('seatBookings') || '[]');
+            bookings.push(currentBooking);
+            localStorage.setItem('seatBookings', JSON.stringify(bookings));
+            
+            // Update UI
+            document.getElementById(`seat-${selectedSeat}`).classList.remove('selected');
+            document.getElementById(`seat-${selectedSeat}`).classList.add('occupied');
+            document.getElementById(`seat-${selectedSeat}`).innerHTML = `${selectedSeat}<br><small>Your Seat</small>`;
+            document.getElementById(`seat-${selectedSeat}`).onclick = null;
+            
+            // Show current booking section
+            showCurrentBooking();
+            
+            // Reset selection
+            selectedSeat = null;
+            document.getElementById('bookSeatBtn').disabled = true;
+            
+            showAlert('Seat booked successfully!', 'success');
+            
+            // Update stats
+            updateDashboardStats();
+        }
+
+        function showCurrentBooking() {
+            if (!currentBooking) return;
+            
+            const currentBookingSection = document.getElementById('currentBookingSection');
+            const currentBookingInfo = document.getElementById('currentBookingInfo');
+            
+            currentBookingInfo.innerHTML = `
+                <h3>Seat ${currentBooking.seatNumber}</h3>
+                <p><strong>Booking Time:</strong> ${currentBooking.startTime}</p>
+                <p><strong>Date:</strong> ${new Date(currentBooking.date).toLocaleDateString()}</p>
+                <p><strong>Status:</strong> <span style="color: #4CAF50;">Active</span></p>
+                
+                <button class="btn btn-primary" onclick="endSession()" style="margin-top: 1rem;">
+                    <i class="fas fa-stop"></i> End Study Session
+                </button>
+            `;
+            
+            currentBookingSection.style.display = 'block';
+            document.getElementById('cancelBookingBtn').style.display = 'inline-block';
+        }
+
+        function cancelBooking() {
+            if (!currentBooking) return;
+            
+            // Remove booking
+            const bookings = JSON.parse(localStorage.getItem('seatBookings') || '[]');
+            const updatedBookings = bookings.filter(b => 
+                !(b.seatNumber === currentBooking.seatNumber && b.date === currentBooking.date)
+            );
+            localStorage.setItem('seatBookings', JSON.stringify(updatedBookings));
+            
+            // Update seat UI
+            const seatElement = document.getElementById(`seat-${currentBooking.seatNumber}`);
+            seatElement.classList.remove('occupied');
+            seatElement.innerHTML = currentBooking.seatNumber;
+            seatElement.onclick = () => selectSeat(currentBooking.seatNumber);
+            
+            // Hide current booking section
+            document.getElementById('currentBookingSection').style.display = 'none';
+            document.getElementById('cancelBookingBtn').style.display = 'none';
+            
+            currentBooking = null;
+            showAlert('Booking cancelled successfully', 'info');
+        }
+
+        function endSession() {
+            if (!currentBooking) return;
+            
+            // Calculate study time
+            const startTime = new Date(currentBooking.date);
+            const endTime = new Date();
+            const studyMinutes = Math.floor((endTime - startTime) / (1000 * 60));
+            
+            // Update study hours in localStorage
+            const studyData = JSON.parse(localStorage.getItem('studyData') || '{}');
+            if (!studyData[currentUser.id || currentUser.email]) {
+                studyData[currentUser.id || currentUser.email] = { totalMinutes: 0, sessions: 0 };
+            }
+            
+            studyData[currentUser.id || currentUser.email].totalMinutes += studyMinutes;
+            studyData[currentUser.id || currentUser.email].sessions += 1;
+            localStorage.setItem('studyData', JSON.stringify(studyData));
+            
+            // Mark booking as completed
+            const bookings = JSON.parse(localStorage.getItem('seatBookings') || '[]');
+            const bookingIndex = bookings.findIndex(b => 
+                b.seatNumber === currentBooking.seatNumber && b.date === currentBooking.date
+            );
+            
+            if (bookingIndex !== -1) {
+                bookings[bookingIndex].status = 'completed';
+                bookings[bookingIndex].endTime = endTime.toISOString();
+                bookings[bookingIndex].duration = studyMinutes;
+                localStorage.setItem('seatBookings', JSON.stringify(bookings));
+            }
+            
+            // Free up the seat
+            cancelBooking();
+            
+            showAlert(`Study session completed! You studied for ${studyMinutes} minutes.`, 'success');
+            
+            // Update stats and achievements
+            updateDashboardStats();
+            checkAchievements();
+        }
+
+        function loadDashboardData() {
+            loadPaymentHistory();
+            updateDashboardStats();
+            checkAchievements();
+            checkCurrentBooking();
+        }
+
+        function loadPaymentHistory() {
+            const payments = JSON.parse(localStorage.getItem('payments') || '[]');
+            const userPayments = payments.filter(p => p.userId === (currentUser.id || currentUser.email));
+            const paymentHistory = document.getElementById('paymentHistory');
+            
+            if (userPayments.length === 0) {
+                paymentHistory.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-credit-card"></i>
+                        <p>No payment history found</p>
+                        <button class="btn btn-primary" onclick="showPricingPlans()">Buy Your First Plan</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            paymentHistory.innerHTML = userPayments.map(payment => `
+                <div class="payment-item">
+                    <div class="payment-info">
+                        <h4>${payment.planType} Plan</h4>
+                        <p>${new Date(payment.date).toLocaleDateString()}</p>
+                    </div>
+                    <div class="payment-amount">₹${payment.amount}</div>
+                </div>
+            `).join('');
+        }
+
+        function updateDashboardStats() {
+            const studyData = JSON.parse(localStorage.getItem('studyData') || '{}');
+            const userStudyData = studyData[currentUser.id || currentUser.email] || { totalMinutes: 0, sessions: 0 };
+            
+            const payments = JSON.parse(localStorage.getItem('payments') || '[]');
+            const userPayments = payments.filter(p => p.userId === (currentUser.id || currentUser.email));
+            
+            // Update study hours
+            const totalHours = Math.floor(userStudyData.totalMinutes / 60);
+            document.getElementById('totalStudyHours').textContent = totalHours;
+            
+            // Update total bookings
+            document.getElementById('totalBookings').textContent = userStudyData.sessions;
+            
+            // Update achievement count (will be implemented based on actual achievements)
+            document.getElementById('achievementCount').textContent = '1'; // Default to 1 for registration
+        }
+
+        function checkAchievements() {
+            const studyData = JSON.parse(localStorage.getItem('studyData') || '{}');
+            const userStudyData = studyData[currentUser.id || currentUser.email] || { totalMinutes: 0, sessions: 0 };
+            
+            // First Day Badge (already registered)
+            document.getElementById('firstDayBadge').classList.remove('locked');
+            
+            // Weekly Warrior (7+ study sessions)
+            if (userStudyData.sessions >= 7) {
+                document.getElementById('weeklyWarriorBadge').classList.remove('locked');
+            }
+            
+            // Monthly Master (30+ hours of study)
+            if (userStudyData.totalMinutes >= 1800) { // 30 hours = 1800 minutes
+                document.getElementById('monthlyMasterBadge').classList.remove('locked');
+            }
+            
+            // Early Bird (study before 8 AM)
+            // This would require tracking time of bookings
+        }
+
+        function checkCurrentBooking() {
+            const bookings = JSON.parse(localStorage.getItem('seatBookings') || '[]');
+            const activeBooking = bookings.find(b => 
+                b.userId === (currentUser.id || currentUser.email) && 
+                b.status === 'active' &&
+                new Date(b.date).toDateString() === new Date().toDateString()
+            );
+            
+            if (activeBooking) {
+                currentBooking = activeBooking;
+                showCurrentBooking();
+                
+                // Mark seat as occupied by user
+                const seatElement = document.getElementById(`seat-${activeBooking.seatNumber}`);
+                if (seatElement) {
+                    seatElement.classList.add('occupied');
+                    seatElement.innerHTML = `${activeBooking.seatNumber}<br><small>Your Seat</small>`;
+                    seatElement.onclick = null;
+                }
+            }
+        }
+
+        // Quick Action Functions
+        function showPricingPlans() {
+            window.location.href = 'index.html#pricing';
+        }
+
+        function contactSupport() {
+            window.open('https://wa.me/919548411150', '_blank');
+        }
+
+        function downloadLibraryCard() {
+            showAlert('Library card download feature will be available soon', 'info');
+        }
+
+        function viewRules() {
+            alert(`Library Rules & Regulations:
+
+1. Maintain complete silence in study areas
+2. Mobile phones must be on silent mode
+3. No eating or drinking in study zones
+4. Keep your study area clean and organized
+5. Follow the dress code (formal/semi-formal)
+6. Show respect to fellow students and staff
+7. Library card must be carried at all times
+8. Report any issues to the administration immediately
+9. No refund for membership once purchased
+10. Library management reserves the right to suspend/terminate membership for misconduct`);
+        }
+    </script>
+</body>
+</html>

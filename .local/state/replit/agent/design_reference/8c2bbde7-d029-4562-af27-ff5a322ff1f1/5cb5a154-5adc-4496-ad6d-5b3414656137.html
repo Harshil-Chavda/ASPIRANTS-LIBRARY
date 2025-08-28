@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspirants Library - Your Gateway to Academic Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'library-red': '#EF4444',
+                        'library-dark': '#0D0D0D',
+                        'library-gray': '#1A1A1A',
+                        'feature-blue': '#3B82F6',
+                        'feature-orange': '#F59E0B',
+                        'feature-yellow': '#EAB308'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 100%);
+            position: relative;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.15) 0%, transparent 50%);
+        }
+        .feature-card {
+            backdrop-filter: blur(10px);
+            background: rgba(26, 26, 26, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-library-dark text-white font-sans">
+
+    <!-- @COMPONENT: Header -->
+    <header class="fixed top-0 w-full z-50 bg-library-dark/90 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold">
+                ASPIRANTS <span class="text-library-red">LIBRARY</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-library-red transition-colors">Home</a>
+                <a href="#features" class="hover:text-library-red transition-colors">Features</a>
+                <a href="#facilities" class="hover:text-library-red transition-colors">Facilities</a>
+                <a href="#pricing" class="hover:text-library-red transition-colors">Pricing</a>
+                <a href="#contact" class="hover:text-library-red transition-colors">Contact</a>
+            </nav>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4">
+                ASPIRANTS<br>
+                <span class="text-library-red">LIBRARY</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                Your Gateway to Academic Excellence
+            </p>
+            <p class="text-lg text-gray-400 mb-16 max-w-4xl mx-auto">
+                Experience the perfect study environment designed for serious learners. Our state-of-the-art facility combines modern amenities with the tranquility you need to achieve your academic goals.
+            </p>
+
+            <!-- Hero Features -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- 24/7 Access -->
+                <div class="feature-card rounded-2xl p-8 border border-gray-700">
+                    <div class="w-16 h-16 bg-feature-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">24/7 Access</h3>
+                    <p class="text-gray-400">Study anytime that suits your schedule</p>
+                </div>
+
+                <!-- High-Speed WiFi -->
+                <div class="feature-card rounded-2xl p-8 border border-gray-700">
+                    <div class="w-16 h-16 bg-feature-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-wifi text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">High-Speed WiFi</h3>
+                    <p class="text-gray-400">Fast internet for research and learning</p>
+                </div>
+
+                <!-- Quiet Zones -->
+                <div class="feature-card rounded-2xl p-8 border border-gray-700">
+                    <div class="w-16 h-16 bg-feature-yellow rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-volume-mute text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Quiet Zones</h3>
+                    <p class="text-gray-400">Peaceful environment for focused study</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Access Section -->
+    <section id="access" class="py-20 bg-library-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Choose Your Path</h2>
+                <p class="text-xl text-gray-400">Select your role to access your personalized dashboard and features</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Student Access -->
+                <div class="bg-library-dark rounded-2xl p-8 border border-gray-700">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-user-graduate text-5xl text-library-red mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Student Access</h3>
+                        <p class="text-gray-400 mb-6">Book seats, track study hours, manage your learning journey, and access exclusive student resources.</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-library-red mr-3"></i>
+                            Real-time seat booking
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-library-red mr-3"></i>
+                            Study progress tracking
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-library-red mr-3"></i>
+                            Digital wallet & payments
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-library-red mr-3"></i>
+                            Achievement badges
+                        </li>
+                    </ul>
+                    <div class="space-y-3">
+                        <button onclick="openStudentLogin()" class="w-full bg-library-red hover:bg-red-600 text-white py-3 px-6 rounded-lg transition-colors">
+                            Student Login
+                        </button>
+                        <button onclick="openStudentRegister()" class="w-full border border-library-red text-library-red hover:bg-library-red hover:text-white py-3 px-6 rounded-lg transition-all">
+                            Student Register
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Admin Access -->
+                <div class="bg-library-dark rounded-2xl p-8 border border-gray-700">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-user-tie text-5xl text-library-red mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Admin Access</h3>
+                        <p class="text-gray-400 mb-6">Manage library operations, monitor occupancy, handle student accounts, and access comprehensive analytics.</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-library-red mr-3"></i>
+                            Dashboard & analytics
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-library-red mr-3"></i>
+                            Student management
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-library-red mr-3"></i>
+                            Booking oversight
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-library-red mr-3"></i>
+                            Financial reports
+                        </li>
+                    </ul>
+                    <button onclick="openAdminLogin()" class="w-full bg-library-red hover:bg-red-600 text-white py-3 px-6 rounded-lg transition-colors">
+                        Admin Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Access Section -->
+
+    <!-- @COMPONENT: Pricing Section -->
+    <section id="pricing" class="py-20 bg-library-dark">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Membership Plans</h2>
+                <p class="text-xl text-gray-400">Choose the plan that fits your study schedule</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                <!-- Full Day -->
+                <div class="bg-library-gray rounded-xl p-6 border border-gray-700 hover:border-library-red transition-colors">
+                    <h3 class="text-xl font-bold mb-2">Full Day</h3>
+                    <div class="text-3xl font-bold text-library-red mb-4">₹1,100</div>
+                    <p class="text-gray-400 mb-6">Complete access throughout the day</p>
+                    <button onclick="initiatePayment('full-day', 1100)" class="w-full bg-library-red hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors">
+                        Choose Plan
+                    </button>
+                </div>
+
+                <!-- Night -->
+                <div class="bg-library-gray rounded-xl p-6 border border-gray-700 hover:border-library-red transition-colors">
+                    <h3 class="text-xl font-bold mb-2">Night</h3>
+                    <div class="text-3xl font-bold text-library-red mb-4">₹1,000</div>
+                    <p class="text-gray-400 mb-6">Perfect for late-night studies</p>
+                    <button onclick="initiatePayment('night', 1000)" class="w-full bg-library-red hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors">
+                        Choose Plan
+                    </button>
+                </div>
+
+                <!-- Morning -->
+                <div class="bg-library-gray rounded-xl p-6 border border-gray-700 hover:border-library-red transition-colors">
+                    <h3 class="text-xl font-bold mb-2">Morning</h3>
+                    <div class="text-3xl font-bold text-library-red mb-4">₹600</div>
+                    <p class="text-gray-400 mb-6">Early bird special timing</p>
+                    <button onclick="initiatePayment('morning', 600)" class="w-full bg-library-red hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors">
+                        Choose Plan
+                    </button>
+                </div>
+
+                <!-- Afternoon -->
+                <div class="bg-library-gray rounded-xl p-6 border border-gray-700 hover:border-library-red transition-colors">
+                    <h3 class="text-xl font-bold mb-2">Afternoon</h3>
+                    <div class="text-3xl font-bold text-library-red mb-4">₹700</div>
+                    <p class="text-gray-400 mb-6">Midday study sessions</p>
+                    <button onclick="initiatePayment('afternoon', 700)" class="w-full bg-library-red hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors">
+                        Choose Plan
+                    </button>
+                </div>
+
+                <!-- Evening -->
+                <div class="bg-library-gray rounded-xl p-6 border border-gray-700 hover:border-library-red transition-colors">
+                    <h3 class="text-xl font-bold mb-2">Evening</h3>
+                    <div class="text-3xl font-bold text-library-red mb-4">₹600</div>
+                    <p class="text-gray-400 mb-6">After-work study time</p>
+                    <button onclick="initiatePayment('evening', 600)" class="w-full bg-library-red hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors">
+                        Choose Plan
+                    </button>
+                </div>
+
+                <!-- 24×7 -->
+                <div class="bg-library-gray rounded-xl p-6 border border-library-red relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-library-red text-white px-3 py-1 text-xs font-bold">POPULAR</div>
+                    <h3 class="text-xl font-bold mb-2">24×7</h3>
+                    <div class="text-3xl font-bold text-library-red mb-4">₹1,800</div>
+                    <p class="text-gray-400 mb-6">Ultimate flexibility plan</p>
+                    <button onclick="initiatePayment('24x7', 1800)" class="w-full bg-library-red hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors">
+                        Choose Plan
+                    </button>
+                </div>
+
+                <!-- Registration Only -->
+                <div class="bg-library-gray rounded-xl p-6 border border-gray-700 hover:border-library-red transition-colors">
+                    <h3 class="text-xl font-bold mb-2">Registration</h3>
+                    <div class="text-3xl font-bold text-library-red mb-4">₹150</div>
+                    <p class="text-gray-400 mb-6">One-time registration fee</p>
+                    <button onclick="initiatePayment('registration', 150)" class="w-full bg-library-red hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors">
+                        Choose Plan
+                    </button>
+                </div>
+
+                <!-- Custom Hours -->
+                <div class="bg-library-gray rounded-xl p-6 border border-gray-700 hover:border-library-red transition-colors">
+                    <h3 class="text-xl font-bold mb-2">Custom Hours</h3>
+                    <div class="text-3xl font-bold text-library-red mb-4">₹100<span class="text-lg">/hr</span></div>
+                    <p class="text-gray-400 mb-6">Pay as you study</p>
+                    <button onclick="openCustomHours()" class="w-full bg-library-red hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors">
+                        Choose Plan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Pricing Section -->
+
+    <!-- @COMPONENT: Facilities Section -->
+    <section id="facilities" class="py-20 bg-library-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">World-Class Facilities</h2>
+                <p class="text-xl text-gray-400">Everything you need for an optimal learning experience under one roof</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Extensive Resources -->
+                <div class="bg-library-dark rounded-xl p-8 border border-gray-700">
+                    <i class="fas fa-book text-4xl text-library-red mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Extensive Resources</h3>
+                    <p class="text-gray-400">Access to thousands of books, journals, and digital resources for comprehensive study material.</p>
+                </div>
+
+                <!-- Modern Infrastructure -->
+                <div class="bg-library-dark rounded-xl p-8 border border-gray-700">
+                    <i class="fas fa-lightbulb text-4xl text-library-red mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Modern Infrastructure</h3>
+                    <p class="text-gray-400">LED lighting, climate control, and ergonomic furniture designed for extended study sessions.</p>
+                </div>
+
+                <!-- Secure Environment -->
+                <div class="bg-library-dark rounded-xl p-8 border border-gray-700">
+                    <i class="fas fa-lock text-4xl text-library-red mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Secure Environment</h3>
+                    <p class="text-gray-400">CCTV monitoring, secure lockers, and 24/7 security ensures your safety and peace of mind.</p>
+                </div>
+
+                <!-- Refreshment Zone -->
+                <div class="bg-library-dark rounded-xl p-8 border border-gray-700">
+                    <i class="fas fa-coffee text-4xl text-library-red mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Refreshment Zone</h3>
+                    <p class="text-gray-400">On-site cafeteria and vending machines to keep you energized during study breaks.</p>
+                </div>
+
+                <!-- Parking Available -->
+                <div class="bg-library-dark rounded-xl p-8 border border-gray-700">
+                    <i class="fas fa-car text-4xl text-library-red mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Parking Available</h3>
+                    <p class="text-gray-400">Convenient parking space for both two-wheelers and four-wheelers at affordable rates.</p>
+                </div>
+
+                <!-- Focus Zones -->
+                <div class="bg-library-dark rounded-xl p-8 border border-gray-700">
+                    <i class="fas fa-bullseye text-4xl text-library-red mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Focus Zones</h3>
+                    <p class="text-gray-400">Dedicated silent study areas, group discussion rooms, and individual cabins for varied study needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Facilities Section -->
+
+    <!-- @COMPONENT: Statistics Section -->
+    <section class="py-20 bg-library-dark">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Trusted by Students</h2>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-5xl font-bold text-library-red mb-2">500+</div>
+                    <div class="text-xl text-gray-400">Active Students</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold text-library-red mb-2">200+</div>
+                    <div class="text-xl text-gray-400">Study Seats</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold text-library-red mb-2">4.8★</div>
+                    <div class="text-xl text-gray-400">User Rating</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold text-library-red mb-2">98%</div>
+                    <div class="text-xl text-gray-400">Satisfaction Rate</div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 mt-16 text-center">
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-building text-2xl text-library-red mb-2"></i>
+                    <span class="text-gray-400">Professional study environment</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-rupee-sign text-2xl text-library-red mb-2"></i>
+                    <span class="text-gray-400">Affordable membership plans</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-shield-alt text-2xl text-library-red mb-2"></i>
+                    <span class="text-gray-400">No hidden charges or fees</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-headset text-2xl text-library-red mb-2"></i>
+                    <span class="text-gray-400">24/7 customer support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Statistics Section -->
+
+    <!-- @COMPONENT: Testimonials Section -->
+    <section class="py-20 bg-library-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Student Success Stories</h2>
+                <p class="text-xl text-gray-400">Hear what our students have to say about their experience at Aspirants Library</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-library-dark rounded-xl p-8 border border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user-graduate text-3xl text-library-red mr-4"></i>
+                        <div>
+                            <h4 class="text-lg font-bold">Rajesh Kumar</h4>
+                            <p class="text-gray-400">UPSC Aspirant</p>
+                        </div>
+                    </div>
+                    <div class="text-library-red text-xl mb-4">★★★★★</div>
+                    <p class="text-gray-300">"Aspirants Library has been my second home for the past 2 years. The peaceful environment and excellent facilities helped me crack my prelims. Highly recommended!"</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-library-dark rounded-xl p-8 border border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user-md text-3xl text-library-red mr-4"></i>
+                        <div>
+                            <h4 class="text-lg font-bold">Priya Sharma</h4>
+                            <p class="text-gray-400">Medical Student</p>
+                        </div>
+                    </div>
+                    <div class="text-library-red text-xl mb-4">★★★★★</div>
+                    <p class="text-gray-300">"The 24/7 access is a game-changer for me. During exam season, I could study late nights without any hassle. The security and cleanliness are top-notch."</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-library-dark rounded-xl p-8 border border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-laptop-code text-3xl text-library-red mr-4"></i>
+                        <div>
+                            <h4 class="text-lg font-bold">Arjun Patel</h4>
+                            <p class="text-gray-400">Engineering Graduate</p>
+                        </div>
+                    </div>
+                    <div class="text-library-red text-xl mb-4">★★★★★</div>
+                    <p class="text-gray-300">"Perfect place for competitive exam preparation. The silence, comfortable seating, and fast WiFi made my GATE preparation much more effective."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-20 bg-library-dark">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Visit Us Today</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
+                <!-- Operating Hours -->
+                <div>
+                    <i class="fas fa-clock text-4xl text-library-red mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Operating Hours</h3>
+                    <p class="text-gray-400">Monday - Sunday: 24 Hours</p>
+                    <p class="text-gray-400">Open 365 Days a Year</p>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <i class="fas fa-phone text-4xl text-library-red mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                    <p class="text-gray-400">Phone: 9548411150</p>
+                    <p class="text-gray-400">Email: aspirantlibrary2002@gmail.com</p>
+                    <p class="text-gray-400">WhatsApp: 9548411150</p>
+                </div>
+
+                <!-- Location -->
+                <div>
+                    <i class="fas fa-map-marker-alt text-4xl text-library-red mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Location</h3>
+                    <p class="text-gray-400">Near Pepper's Pizza</p>
+                    <p class="text-gray-400">Main Commercial Complex</p>
+                    <a href="#" class="text-library-red hover:underline">View on Google Maps →</a>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <h3 class="text-2xl font-bold mb-8">Ready to Begin Your Journey?</h3>
+                <p class="text-gray-400 mb-8">Join hundreds of successful students who chose Aspirants Library as their study partner</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:9548411150" class="bg-library-red hover:bg-red-600 text-white px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center">
+                        <i class="fas fa-phone mr-2"></i>
+                        Call us at 9548411150
+                    </a>
+                    <a href="https://wa.me/9548411150" class="border border-library-red text-library-red hover:bg-library-red hover:text-white px-8 py-3 rounded-lg transition-all inline-flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Student Login Modal -->
+    <div id="studentLoginModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75 flex items-center justify-center p-4">
+        <div class="bg-library-gray rounded-xl p-8 max-w-md w-full border border-gray-700">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Student Login</h3>
+                <button onclick="closeModal('studentLoginModal')" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Email / Mobile</label>
+                    <input type="text" class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Password</label>
+                    <input type="password" class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                </div>
+                <button type="submit" class="w-full bg-library-red hover:bg-red-600 text-white py-3 px-4 rounded-lg transition-colors">
+                    Login
+                </button>
+                <p class="text-center text-gray-400">
+                    Don't have an account? 
+                    <button type="button" onclick="switchToRegister()" class="text-library-red hover:underline">Register here</button>
+                </p>
+            </form>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Student Login Modal -->
+
+    <!-- @COMPONENT: Student Registration Modal -->
+    <div id="studentRegisterModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75 flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-library-gray rounded-xl p-8 max-w-2xl w-full border border-gray-700 my-8">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Student Registration</h3>
+                <button onclick="closeModal('studentRegisterModal')" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form class="space-y-6">
+                <!-- Personal Information -->
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Full Name *</label>
+                        <input type="text" required class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Date of Registration *</label>
+                        <input type="date" required class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Date of Birth *</label>
+                        <input type="date" required class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Aadhar Number *</label>
+                        <input type="text" required maxlength="12" class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Personal Mobile *</label>
+                        <input type="tel" required class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Father's Mobile</label>
+                        <input type="tel" class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Father's Name *</label>
+                        <input type="text" required class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email Address *</label>
+                        <input type="email" required class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                    </div>
+                </div>
+
+                <!-- Address Information -->
+                <div>
+                    <label class="block text-sm font-medium mb-2">Current Address *</label>
+                    <textarea required rows="3" class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2">Permanent Address</label>
+                    <textarea rows="3" class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none"></textarea>
+                </div>
+
+                <!-- Photo Upload -->
+                <div>
+                    <label class="block text-sm font-medium mb-2">Profile Photo *</label>
+                    <input type="file" accept="image/*" required class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                </div>
+
+                <!-- Library Rules -->
+                <div class="bg-library-dark rounded-lg p-6 border border-gray-600">
+                    <h4 class="text-lg font-bold mb-4">Library Rules & Regulations</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>• Maintain complete silence in study areas</li>
+                        <li>• No food or drinks allowed in study zones</li>
+                        <li>• Mobile phones must be on silent mode</li>
+                        <li>• Respect other students and library property</li>
+                        <li>• Follow the designated timings for your plan</li>
+                        <li>• Library is not responsible for lost personal belongings</li>
+                        <li>• Violation of rules may result in membership termination</li>
+                    </ul>
+                </div>
+
+                <!-- Declaration -->
+                <div class="flex items-start">
+                    <input type="checkbox" required class="mt-1 mr-3">
+                    <label class="text-sm text-gray-400">
+                        I hereby declare that all the information provided above is true and correct to the best of my knowledge. I agree to abide by all library rules and regulations.
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full bg-library-red hover:bg-red-600 text-white py-3 px-4 rounded-lg transition-colors">
+                    Register Student
+                </button>
+
+                <p class="text-center text-gray-400">
+                    Already have an account? 
+                    <button type="button" onclick="switchToLogin()" class="text-library-red hover:underline">Login here</button>
+                </p>
+            </form>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Student Registration Modal -->
+
+    <!-- @COMPONENT: Admin Login Modal -->
+    <div id="adminLoginModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75 flex items-center justify-center p-4">
+        <div class="bg-library-gray rounded-xl p-8 max-w-md w-full border border-gray-700">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Admin Login</h3>
+                <button onclick="closeModal('adminLoginModal')" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Admin Username</label>
+                    <input type="text" class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Admin Password</label>
+                    <input type="password" class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none">
+                </div>
+                <button type="submit" class="w-full bg-library-red hover:bg-red-600 text-white py-3 px-4 rounded-lg transition-colors">
+                    Admin Login
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Admin Login Modal -->
+
+    <!-- @COMPONENT: Custom Hours Modal -->
+    <div id="customHoursModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75 flex items-center justify-center p-4">
+        <div class="bg-library-gray rounded-xl p-8 max-w-md w-full border border-gray-700">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Custom Hours</h3>
+                <button onclick="closeModal('customHoursModal')" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Number of Hours</label>
+                    <input type="number" min="1" id="customHours" class="w-full bg-library-dark border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-library-red focus:border-library-red outline-none" placeholder="Enter hours">
+                </div>
+                <div class="text-center">
+                    <p class="text-gray-400">Rate: ₹100 per hour</p>
+                    <p class="text-xl font-bold text-library-red" id="totalAmount">Total: ₹0</p>
+                </div>
+                <button type="button" onclick="processCustomPayment()" class="w-full bg-library-red hover:bg-red-600 text-white py-3 px-4 rounded-lg transition-colors">
+                    Proceed to Payment
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Custom Hours Modal -->
+
+    <script>
+        // Modal functions
+        function openStudentLogin() {
+            document.getElementById('studentLoginModal').classList.remove('hidden');
+        }
+
+        function openStudentRegister() {
+            document.getElementById('studentRegisterModal').classList.remove('hidden');
+        }
+
+        function openAdminLogin() {
+            document.getElementById('adminLoginModal').classList.remove('hidden');
+        }
+
+        function openCustomHours() {
+            document.getElementById('customHoursModal').classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        function switchToRegister() {
+            closeModal('studentLoginModal');
+            openStudentRegister();
+        }
+
+        function switchToLogin() {
+            closeModal('studentRegisterModal');
+            openStudentLogin();
+        }
+
+        // Custom hours calculation
+        document.addEventListener('DOMContentLoaded', function() {
+            const hoursInput = document.getElementById('customHours');
+            const totalAmountEl = document.getElementById('totalAmount');
+
+            if (hoursInput && totalAmountEl) {
+                hoursInput.addEventListener('input', function() {
+                    const hours = parseInt(this.value) || 0;
+                    const total = hours * 100;
+                    totalAmountEl.textContent = `Total: ₹${total}`;
+                });
+            }
+        });
+
+        // Payment integration functions
+        function initiatePayment(planType, amount) {
+            // TODO: Integrate with Razorpay payment gateway
+            alert(`Processing payment for ${planType} plan: ₹${amount}`);
+            // This would integrate with Razorpay API
+        }
+
+        function processCustomPayment() {
+            const hours = parseInt(document.getElementById('customHours').value) || 0;
+            const total = hours * 100;
+            if (hours > 0) {
+                initiatePayment('custom', total);
+                closeModal('customHoursModal');
+            } else {
+                alert('Please enter valid hours');
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('bg-black')) {
+                const modals = ['studentLoginModal', 'studentRegisterModal', 'adminLoginModal', 'customHoursModal'];
+                modals.forEach(modalId => {
+                    const modal = document.getElementById(modalId);
+                    if (modal && !modal.classList.contains('hidden')) {
+                        closeModal(modalId);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

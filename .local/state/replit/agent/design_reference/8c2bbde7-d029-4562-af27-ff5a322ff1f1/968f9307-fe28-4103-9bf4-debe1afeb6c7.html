@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspirants Library - Your Gateway to Academic Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'aspirants-red': '#EF4444',
+                        'dark-overlay': 'rgba(0, 0, 0, 0.7)',
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <!-- @COMPONENT: Navigation [responsive header with login options] -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-gray-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-book-open text-aspirants-red text-xl"></i>
+                    <span class="font-bold text-xl text-gray-900">ASPIRANTS <span class="text-aspirants-red">LIBRARY</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#facilities" class="text-gray-600 hover:text-aspirants-red transition-colors">Facilities</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-aspirants-red transition-colors">Pricing</a>
+                    <a href="#contact" class="text-gray-600 hover:text-aspirants-red transition-colors">Contact</a>
+                    <button data-event="click:showStudentLogin" class="bg-aspirants-red text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">Student Login</button>
+                    <button data-event="click:showAdminLogin" class="border border-aspirants-red text-aspirants-red px-4 py-2 rounded-lg hover:bg-aspirants-red hover:text-white transition-colors">Admin</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- Hero Section -->
+    <!-- @COMPONENT: HeroSection [main landing with background image and features] -->
+    <!-- A modern library building with LED lighting at night, professional architecture -->
+    <section class="relative min-h-screen flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4">
+                ASPIRANTS
+            </h1>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-aspirants-red mb-6">
+                LIBRARY
+            </h2>
+            <p class="text-xl sm:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+                Your Gateway to Academic Excellence
+            </p>
+            <p class="text-base sm:text-lg text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Experience the perfect study environment designed for serious learners. Our state-of-the-art facility combines modern amenities with the tranquility you need to achieve your academic goals.
+            </p>
+            
+            <!-- Feature Icons -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2">24/7 Access</h3>
+                    <p class="text-white/80 text-sm">Study anytime that suits your schedule</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-wifi text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2">High-Speed WiFi</h3>
+                    <p class="text-white/80 text-sm">Fast internet for research and learning</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-volume-mute text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2">Quiet Zones</h3>
+                    <p class="text-white/80 text-sm">Peaceful environment for focused study</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- Choose Your Path Section -->
+    <!-- @COMPONENT: RoleSelection [student and admin access cards] -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Choose Your Path</h2>
+                <p class="text-xl text-gray-600">Select your role to access your personalized dashboard and features</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Student Access Card -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-graduate text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Student Access</h3>
+                        <p class="text-gray-600">Book seats, track study hours, manage your learning journey, and access exclusive student resources.</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Real-time seat booking
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Study progress tracking
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Digital wallet & payments
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Achievement badges
+                        </li>
+                    </ul>
+                    
+                    <div class="flex space-x-4">
+                        <button data-event="click:showStudentLogin" class="flex-1 bg-blue-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-600 transition-colors">Student Login</button>
+                        <button data-event="click:showStudentRegister" class="flex-1 border border-blue-500 text-blue-500 py-3 px-6 rounded-lg font-semibold hover:bg-blue-50 transition-colors">Register</button>
+                    </div>
+                </div>
+                
+                <!-- Admin Access Card -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-tie text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Admin Access</h3>
+                        <p class="text-gray-600">Manage library operations, monitor occupancy, handle student accounts, and access comprehensive analytics.</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Dashboard & analytics
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Student management
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Booking oversight
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Financial reports
+                        </li>
+                    </ul>
+                    
+                    <button data-event="click:showAdminLogin" class="w-full bg-gray-700 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors">Admin Login</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: RoleSelection -->
+
+    <!-- Pricing Section -->
+    <!-- @COMPONENT: PricingSection [membership plans with Razorpay integration] -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Membership Plans</h2>
+                <p class="text-xl text-gray-600">Choose the perfect plan that fits your study schedule</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- @MAP: pricingPlans.map(plan => ( -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-2 hover:border-aspirants-red">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-bind="plan.name">Full Day</h3>
+                        <div class="text-3xl font-bold text-aspirants-red mb-1">₹<span data-bind="plan.price">1100</span></div>
+                        <p class="text-sm text-gray-500" data-bind="plan.duration">Per Month</p>
+                    </div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span data-bind="plan.feature1">Full day access (6 AM - 11 PM)</span>
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            All amenities included
+                        </li>
+                    </ul>
+                    <button data-event="click:initiatePayment" data-plan="full-day" data-amount="1100" class="w-full bg-aspirants-red text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">Select Plan</button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-2 hover:border-aspirants-red">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Night Shift</h3>
+                        <div class="text-3xl font-bold text-aspirants-red mb-1">₹1000</div>
+                        <p class="text-sm text-gray-500">Per Month</p>
+                    </div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Night access (7 PM - 7 AM)
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Perfect for working professionals
+                        </li>
+                    </ul>
+                    <button data-event="click:initiatePayment" data-plan="night" data-amount="1000" class="w-full bg-aspirants-red text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">Select Plan</button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-2 hover:border-aspirants-red">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Morning</h3>
+                        <div class="text-3xl font-bold text-aspirants-red mb-1">₹600</div>
+                        <p class="text-sm text-gray-500">Per Month</p>
+                    </div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Morning access (6 AM - 2 PM)
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Fresh morning environment
+                        </li>
+                    </ul>
+                    <button data-event="click:initiatePayment" data-plan="morning" data-amount="600" class="w-full bg-aspirants-red text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">Select Plan</button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-2 hover:border-aspirants-red">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Afternoon</h3>
+                        <div class="text-3xl font-bold text-aspirants-red mb-1">₹700</div>
+                        <p class="text-sm text-gray-500">Per Month</p>
+                    </div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Afternoon access (12 PM - 8 PM)
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Peak productive hours
+                        </li>
+                    </ul>
+                    <button data-event="click:initiatePayment" data-plan="afternoon" data-amount="700" class="w-full bg-aspirants-red text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">Select Plan</button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-2 hover:border-aspirants-red">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Evening</h3>
+                        <div class="text-3xl font-bold text-aspirants-red mb-1">₹600</div>
+                        <p class="text-sm text-gray-500">Per Month</p>
+                    </div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Evening access (4 PM - 10 PM)
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            After work/college hours
+                        </li>
+                    </ul>
+                    <button data-event="click:initiatePayment" data-plan="evening" data-amount="600" class="w-full bg-aspirants-red text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">Select Plan</button>
+                </div>
+                
+                <div class="bg-gradient-to-br from-aspirants-red to-red-600 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow text-white relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-bold">POPULAR</span>
+                    </div>
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold mb-2">24×7 Access</h3>
+                        <div class="text-3xl font-bold mb-1">₹1800</div>
+                        <p class="text-sm opacity-90">Per Month</p>
+                    </div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check mr-2"></i>
+                            Unlimited 24/7 access
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check mr-2"></i>
+                            All premium facilities
+                        </li>
+                    </ul>
+                    <button data-event="click:initiatePayment" data-plan="24x7" data-amount="1800" class="w-full bg-white text-aspirants-red py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold">Select Plan</button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-2 hover:border-aspirants-red">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Registration</h3>
+                        <div class="text-3xl font-bold text-aspirants-red mb-1">₹150</div>
+                        <p class="text-sm text-gray-500">One-time</p>
+                    </div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Registration fee only
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Account setup
+                        </li>
+                    </ul>
+                    <button data-event="click:initiatePayment" data-plan="registration" data-amount="150" class="w-full bg-aspirants-red text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">Pay Now</button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-2 hover:border-aspirants-red">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Hours</h3>
+                        <div class="text-3xl font-bold text-aspirants-red mb-1">₹100</div>
+                        <p class="text-sm text-gray-500">Per Hour</p>
+                    </div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Flexible hourly booking
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Pay as you study
+                        </li>
+                    </ul>
+                    <button data-event="click:showCustomHours" class="w-full bg-aspirants-red text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">Book Hours</button>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: PricingSection -->
+
+    <!-- Facilities Section -->
+    <!-- @COMPONENT: FacilitiesSection [grid of world-class facilities] -->
+    <section id="facilities" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">World-Class Facilities</h2>
+                <p class="text-xl text-gray-600">Everything you need for an optimal learning experience under one roof</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-book text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Extensive Resources</h3>
+                    <p class="text-gray-600">Access to thousands of books, journals, and digital resources for comprehensive study material.</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lightbulb text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Modern Infrastructure</h3>
+                    <p class="text-gray-600">LED lighting, climate control, and ergonomic furniture designed for extended study sessions.</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Secure Environment</h3>
+                    <p class="text-gray-600">CCTV monitoring, secure lockers, and 24/7 security ensures your safety and peace of mind.</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-coffee text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Refreshment Zone</h3>
+                    <p class="text-gray-600">On-site cafeteria and vending machines to keep you energized during study breaks.</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-car text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Parking Available</h3>
+                    <p class="text-gray-600">Convenient parking space for both two-wheelers and four-wheelers at affordable rates.</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-crosshairs text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Focus Zones</h3>
+                    <p class="text-gray-600">Dedicated silent study areas, group discussion rooms, and individual cabins for varied study needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FacilitiesSection -->
+
+    <!-- Statistics Section -->
+    <!-- @COMPONENT: StatsSection [trusted by students with updated numbers] -->
+    <section class="py-20 bg-aspirants-red">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Trusted by Students</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-white mb-2">500+</div>
+                    <p class="text-white/90">Active Students</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-white mb-2" data-bind="stats.seats">91</div>
+                    <p class="text-white/90">Study Seats</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-white mb-2">4.8★</div>
+                    <p class="text-white/90">User Rating</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-white mb-2">98%</div>
+                    <p class="text-white/90">Satisfaction Rate</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+                <div class="text-center">
+                    <i class="fas fa-building text-white text-3xl mb-3"></i>
+                    <p class="text-white/90">Professional study environment</p>
+                </div>
+                
+                <div class="text-center">
+                    <i class="fas fa-rupee-sign text-white text-3xl mb-3"></i>
+                    <p class="text-white/90">Affordable membership plans</p>
+                </div>
+                
+                <div class="text-center">
+                    <i class="fas fa-ban text-white text-3xl mb-3"></i>
+                    <p class="text-white/90">No hidden charges or fees</p>
+                </div>
+                
+                <div class="text-center">
+                    <i class="fas fa-headset text-white text-3xl mb-3"></i>
+                    <p class="text-white/90">24/7 customer support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: StatsSection -->
+
+    <!-- Testimonials Section -->
+    <!-- @COMPONENT: TestimonialsSection [updated success stories] -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Student Success Stories</h2>
+                <p class="text-xl text-gray-600">Hear what our students have to say about their experience at Aspirants Library</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-code text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900" data-bind="testimonial.name">Aayush</h3>
+                            <p class="text-gray-600" data-bind="testimonial.title">Web Developer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    
+                    <p class="text-gray-700 leading-relaxed" data-bind="testimonial.content">
+                        "Aspirants Library provided the perfect environment for my coding journey. The 24/7 access allowed me to work on projects during late nights, and the high-speed WiFi was crucial for my learning. Thanks to the focused atmosphere here, I successfully transitioned into web development!"
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user-graduate text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900" data-bind="testimonial.name">Yodesh Sharma</h3>
+                            <p class="text-gray-600" data-bind="testimonial.title">Academic Achiever</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    
+                    <p class="text-gray-700 leading-relaxed" data-bind="testimonial.content">
+                        "The quiet zones and professional atmosphere at Aspirants Library made all the difference in my preparation. The facilities are top-notch, and the staff is incredibly supportive. This place has been instrumental in helping me achieve my academic goals!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: TestimonialsSection -->
+
+    <!-- Contact Section -->
+    <!-- @COMPONENT: ContactSection [visit us today with updated contact info] -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Visit Us Today</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Operating Hours</h3>
+                    <p class="text-gray-600 mb-2">Monday - Sunday: 24 Hours</p>
+                    <p class="text-gray-600">Open 365 Days a Year</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Contact Information</h3>
+                    <p class="text-gray-600 mb-1">Phone: <span data-bind="contact.phone" class="font-semibold">9548411150</span></p>
+                    <p class="text-gray-600 mb-1">Email: <span data-bind="contact.email" class="font-semibold">aspirantlibrary2002@gmail.com</span></p>
+                    <p class="text-gray-600">WhatsApp: <span data-bind="contact.whatsapp" class="font-semibold">9548411150</span></p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Location</h3>
+                    <p class="text-gray-600 mb-1">Near Pepper's Pizza</p>
+                    <p class="text-gray-600 mb-3">Main Commercial Complex</p>
+                    <button class="text-aspirants-red hover:underline">View on Google Maps →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- Student Registration Modal -->
+    <!-- @COMPONENT: StudentRegistrationModal [comprehensive registration form] -->
+    <div id="studentRegistrationModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900">Student Registration</h2>
+                    <button data-event="click:closeModal" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <form data-implementation="Should handle student registration with validation">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-aspirants-red focus:border-transparent" data-bind="registration.name">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Date of Registration *</label>
+                            <input type="date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-aspirants-red focus:border-transparent" data-bind="registration.date">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Date of Birth *</label>
+                            <input type="date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-aspirants-red focus:border-transparent" data-bind="registration.dob">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Aadhar Number *</label>
+                            <input type="text" required pattern="[0-9]{12}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-aspirants-red focus:border-transparent" data-bind="registration.aadhar">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Personal Mobile *</label>
+                            <input type="tel" required pattern="[0-9]{10}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-aspirants-red focus:border-transparent" data-bind="registration.personalMobile">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Father's Mobile *</label>
+                            <input type="tel" required pattern="[0-9]{10}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-aspirants-red focus:border-transparent" data-bind="registration.fatherMobile">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Father's Name *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-aspirants-red focus:border-transparent" data-bind="registration.fatherName">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-aspirants-red focus:border-transparent" data-bind="registration.email">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Permanent Address *</label>
+                        <textarea required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-aspirants-red focus:border-transparent" data-bind="registration.permanentAddress"></textarea>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Local Address *</label>
+                        <textarea required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-aspirants-red focus:border-transparent" data-bind="registration.localAddress"></textarea>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Photo Upload *</label>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                            <i class="fas fa-upload text-gray-400 text-3xl mb-3"></i>
+                            <p class="text-gray-500">Click to upload or drag and drop</p>
+                            <input type="file" accept="image/*" required class="hidden" data-implementation="Use FileUpload component here">
+                        </div>
+                    </div>
+                    
+                    <!-- Library Rules Section -->
+                    <div class="mb-6 bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Library Rules & Regulations</h3>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-aspirants-red text-xs mt-2 mr-2"></i>
+                                Maintain complete silence in study areas
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-aspirants-red text-xs mt-2 mr-2"></i>
+                                Mobile phones must be kept on silent mode
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-aspirants-red text-xs mt-2 mr-2"></i>
+                                Food and beverages are not allowed in study areas
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-aspirants-red text-xs mt-2 mr-2"></i>
+                                Respect other students' study time and space
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-aspirants-red text-xs mt-2 mr-2"></i>
+                                Report any issues to library staff immediately
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-aspirants-red text-xs mt-2 mr-2"></i>
+                                Monthly fees must be paid by the 5th of each month
+                            </li>
+                        </ul>
+                        
+                        <div class="flex items-start">
+                            <input type="checkbox" required class="mt-1 mr-3" data-bind="registration.agreeRules">
+                            <label class="text-sm text-gray-700">
+                                I have read and agree to abide by all library rules and regulations. I understand that violation of these rules may result in suspension or termination of my membership.
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <button type="submit" data-event="click:handleRegistration" class="flex-1 bg-aspirants-red text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-600 transition-colors">Complete Registration</button>
+                        <button type="button" data-event="click:closeModal" class="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: StudentRegistrationModal -->
+
+    <!-- Student Login Modal -->
+    <!-- @COMPONENT: StudentLoginModal [login form for students] -->
+    <div id="studentLoginModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full mx-4">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900">Student Login</h2>
+                    <button data-event="click:closeModal" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <form data-implementation="Should handle student authentication">
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email or Mobile</label>
+                        <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-aspirants-red focus:border-transparent" data-bind="login.identifier">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <input type="password" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-aspirants-red focus:border-transparent" data-bind="login.password">
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-6">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span class="text-sm text-gray-600">Remember me</span>
+                        </label>
+                        <button type="button" class="text-sm text-aspirants-red hover:underline">Forgot Password?</button>
+                    </div>
+                    
+                    <button type="submit" data-event="click:handleStudentLogin" class="w-full bg-aspirants-red text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-600 transition-colors mb-4">Sign In</button>
+                    
+                    <p class="text-center text-sm text-gray-600">
+                        Don't have an account? 
+                        <button type="button" data-event="click:showStudentRegister" class="text-aspirants-red hover:underline">Register here</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: StudentLoginModal -->
+
+    <!-- Admin Login Modal -->
+    <!-- @COMPONENT: AdminLoginModal [admin authentication] -->
+    <div id="adminLoginModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full mx-4">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900">Admin Login</h2>
+                    <button data-event="click:closeModal" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <form data-implementation="Should handle admin authentication with role verification">
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Admin Username</label>
+                        <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent" data-bind="adminLogin.username">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Admin Password</label>
+                        <input type="password" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent" data-bind="adminLogin.password">
+                    </div>
+                    
+                    <button type="submit" data-event="click:handleAdminLogin" class="w-full bg-gray-700 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors">Admin Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: AdminLoginModal -->
+
+    <!-- Footer -->
+    <!-- @COMPONENT: Footer [contact information and links] -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-book-open text-aspirants-red text-xl"></i>
+                        <span class="font-bold text-xl">ASPIRANTS <span class="text-aspirants-red">LIBRARY</span></span>
+                    </div>
+                    <p class="text-gray-300">Your gateway to academic excellence. Professional study environment for serious learners.</p>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#facilities" class="text-gray-300 hover:text-white transition-colors">Facilities</a></li>
+                        <li><a href="#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><button data-event="click:showStudentLogin" class="text-gray-300 hover:text-white transition-colors">Student Login</button></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-aspirants-red"></i>
+                            <span data-bind="contact.phone">9548411150</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-aspirants-red"></i>
+                            <span data-bind="contact.email">aspirantlibrary2002@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-aspirants-red"></i>
+                            <span>Near Pepper's Pizza, Main Commercial Complex</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2024 Aspirants Library. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        // Modal functionality - basic show/hide without full state management
+        (function() {
+            // Modal handlers
+            const modals = {
+                studentLogin: document.getElementById('studentLoginModal'),
+                studentRegister: document.getElementById('studentRegistrationModal'),
+                adminLogin: document.getElementById('adminLoginModal')
+            };
+
+            // Show modal functions
+            window.showStudentLogin = () => {
+                hideAllModals();
+                if (modals.studentLogin) modals.studentLogin.classList.remove('hidden');
+            };
+
+            window.showStudentRegister = () => {
+                hideAllModals();
+                if (modals.studentRegister) modals.studentRegister.classList.remove('hidden');
+            };
+
+            window.showAdminLogin = () => {
+                hideAllModals();
+                if (modals.adminLogin) modals.adminLogin.classList.remove('hidden');
+            };
+
+            function hideAllModals() {
+                Object.values(modals).forEach(modal => {
+                    if (modal) modal.classList.add('hidden');
+                });
+            }
+
+            // Close modal when clicking outside or on close button
+            document.addEventListener('click', (e) => {
+                if (e.target.matches('[data-event*="showStudentLogin"]')) {
+                    showStudentLogin();
+                } else if (e.target.matches('[data-event*="showStudentRegister"]')) {
+                    showStudentRegister();
+                } else if (e.target.matches('[data-event*="showAdminLogin"]')) {
+                    showAdminLogin();
+                } else if (e.target.matches('[data-event*="closeModal"]') || e.target.closest('.fixed.inset-0') === e.target) {
+                    hideAllModals();
+                }
+            });
+
+            // Payment integration placeholder
+            window.initiatePayment = (plan, amount) => {
+                // TODO: Integrate with Razorpay
+                console.log(`Initiating payment for ${plan}: ₹${amount}`);
+                alert(`Payment integration for ${plan} (₹${amount}) will be implemented with Razorpay`);
+            };
+
+            // Payment button handlers
+            document.addEventListener('click', (e) => {
+                if (e.target.matches('[data-event*="initiatePayment"]')) {
+                    const plan = e.target.dataset.plan;
+                    const amount = e.target.dataset.amount;
+                    initiatePayment(plan, amount);
+                }
+            });
+
+            // Form submission handlers (placeholder)
+            document.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const form = e.target;
+                
+                if (form.querySelector('[data-event*="handleRegistration"]')) {
+                    console.log('Student registration form submitted');
+                    alert('Registration functionality will be implemented with backend integration');
+                } else if (form.querySelector('[data-event*="handleStudentLogin"]')) {
+                    console.log('Student login form submitted');
+                    alert('Student authentication will be implemented with backend integration');
+                } else if (form.querySelector('[data-event*="handleAdminLogin"]')) {
+                    console.log('Admin login form submitted');
+                    alert('Admin authentication will be implemented with backend integration');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,843 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspirants Library - Your Gateway to Academic Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'premium-navy': '#1e293b',
+                        'premium-gold': '#f59e0b',
+                        'premium-slate': '#64748b',
+                        'premium-emerald': '#10b981',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'counter': 'counter 2s ease-out',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes counter {
+            from { transform: scale(0.5); }
+            to { transform: scale(1); }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+        }
+        .premium-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .premium-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- @COMPONENT: NavigationHeader -->
+    <nav class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-premium-gold to-orange-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-premium-navy">ASPIRANTS</h1>
+                        <p class="text-xs text-premium-slate -mt-1">LIBRARY</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#facilities" class="text-premium-slate hover:text-premium-navy transition-colors">Facilities</a>
+                    <a href="#pricing" class="text-premium-slate hover:text-premium-navy transition-colors">Pricing</a>
+                    <a href="#testimonials" class="text-premium-slate hover:text-premium-navy transition-colors">Reviews</a>
+                    <a href="#contact" class="text-premium-slate hover:text-premium-navy transition-colors">Contact</a>
+                    <button class="bg-premium-gold hover:bg-orange-500 text-white px-6 py-2 rounded-lg font-medium transition-all transform hover:scale-105">
+                        Get Started
+                    </button>
+                </div>
+                <button class="md:hidden text-premium-navy">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: NavigationHeader -->
+
+    <!-- @COMPONENT: HeroSection -->
+    <section class="relative min-h-screen gradient-bg flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <!-- Modern library interior with students studying in a sophisticated environment -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+            <div class="absolute inset-0 bg-premium-navy/80"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                    ASPIRANTS
+                    <span class="block text-gradient">LIBRARY</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Your Gateway to Academic Excellence
+                </p>
+                <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
+                    Experience the perfect study environment designed for serious learners. Our state-of-the-art facility combines modern amenities with the tranquility you need to achieve your academic goals.
+                </p>
+                
+                <!-- Key Features -->
+                <div class="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+                    <div class="premium-card rounded-xl p-6 premium-shadow">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-clock text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-premium-navy mb-2">24/7 Access</h3>
+                        <p class="text-premium-slate">Study anytime that suits your schedule</p>
+                    </div>
+                    <div class="premium-card rounded-xl p-6 premium-shadow">
+                        <div class="w-16 h-16 bg-premium-emerald rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-wifi text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-premium-navy mb-2">High-Speed WiFi</h3>
+                        <p class="text-premium-slate">Fast internet for research and learning</p>
+                    </div>
+                    <div class="premium-card rounded-xl p-6 premium-shadow">
+                        <div class="w-16 h-16 bg-premium-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-volume-mute text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-premium-navy mb-2">Quiet Zones</h3>
+                        <p class="text-premium-slate">Peaceful environment for focused study</p>
+                    </div>
+                </div>
+                
+                <button class="bg-premium-gold hover:bg-orange-500 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 premium-shadow">
+                    Start Your Journey Today
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- @COMPONENT: AccessSelection -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-premium-navy mb-4">Choose Your Path</h2>
+                <p class="text-xl text-premium-slate max-w-2xl mx-auto">
+                    Select your role to access your personalized dashboard and features
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Student Access -->
+                <div class="premium-card rounded-2xl p-8 premium-shadow hover:scale-105 transition-all duration-300 cursor-pointer group">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-user-graduate text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-premium-navy mb-4">Student Access</h3>
+                        <p class="text-premium-slate mb-6">
+                            Book seats, track study hours, manage your learning journey, and access exclusive student resources.
+                        </p>
+                        
+                        <div class="space-y-3 mb-8 text-left">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-premium-emerald"></i>
+                                <span class="text-premium-slate">Real-time seat booking</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-premium-emerald"></i>
+                                <span class="text-premium-slate">Study progress tracking</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-premium-emerald"></i>
+                                <span class="text-premium-slate">Digital wallet & payments</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-premium-emerald"></i>
+                                <span class="text-premium-slate">Achievement badges</span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold transition-colors" data-event="click:handleStudentLogin">
+                                Student Login
+                            </button>
+                            <button class="w-full border-2 border-blue-500 text-blue-500 hover:bg-blue-50 py-3 rounded-lg font-semibold transition-colors" data-event="click:handleStudentRegister">
+                                Register as Student
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Admin Access -->
+                <div class="premium-card rounded-2xl p-8 premium-shadow hover:scale-105 transition-all duration-300 cursor-pointer group">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-premium-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-user-tie text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-premium-navy mb-4">Admin Access</h3>
+                        <p class="text-premium-slate mb-6">
+                            Manage library operations, monitor occupancy, handle student accounts, and access comprehensive analytics.
+                        </p>
+                        
+                        <div class="space-y-3 mb-8 text-left">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-premium-emerald"></i>
+                                <span class="text-premium-slate">Dashboard & analytics</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-premium-emerald"></i>
+                                <span class="text-premium-slate">Student management</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-premium-emerald"></i>
+                                <span class="text-premium-slate">Booking oversight</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-premium-emerald"></i>
+                                <span class="text-premium-slate">Financial reports</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-premium-gold hover:bg-orange-500 text-white py-3 rounded-lg font-semibold transition-colors" data-event="click:handleAdminLogin">
+                            Admin Login
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AccessSelection -->
+
+    <!-- @COMPONENT: FacilitiesSection -->
+    <section id="facilities" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-premium-navy mb-4">World-Class Facilities</h2>
+                <p class="text-xl text-premium-slate max-w-2xl mx-auto">
+                    Everything you need for an optimal learning experience under one roof
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: facilities.map(facility => ( -->
+                <div class="premium-card rounded-xl p-6 premium-shadow hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-premium-emerald rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-book text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-premium-navy mb-3">Extensive Resources</h3>
+                    <p class="text-premium-slate">Access to thousands of books, journals, and digital resources for comprehensive study material.</p>
+                </div>
+                
+                <div class="premium-card rounded-xl p-6 premium-shadow hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-lightbulb text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-premium-navy mb-3">Modern Infrastructure</h3>
+                    <p class="text-premium-slate">LED lighting, climate control, and ergonomic furniture designed for extended study sessions.</p>
+                </div>
+                
+                <div class="premium-card rounded-xl p-6 premium-shadow hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-premium-navy mb-3">Secure Environment</h3>
+                    <p class="text-premium-slate">CCTV monitoring, secure lockers, and 24/7 security ensures your safety and peace of mind.</p>
+                </div>
+                
+                <div class="premium-card rounded-xl p-6 premium-shadow hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-premium-gold rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-coffee text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-premium-navy mb-3">Refreshment Zone</h3>
+                    <p class="text-premium-slate">On-site cafeteria and vending machines to keep you energized during study breaks.</p>
+                </div>
+                
+                <div class="premium-card rounded-xl p-6 premium-shadow hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-car text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-premium-navy mb-3">Parking Available</h3>
+                    <p class="text-premium-slate">Convenient parking space for both two-wheelers and four-wheelers at affordable rates.</p>
+                </div>
+                
+                <div class="premium-card rounded-xl p-6 premium-shadow hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-bullseye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-premium-navy mb-3">Focus Zones</h3>
+                    <p class="text-premium-slate">Dedicated silent study areas, group discussion rooms, and individual cabins for varied study needs.</p>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FacilitiesSection -->
+
+    <!-- @COMPONENT: PricingSection -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-premium-navy mb-4">Choose Your Plan</h2>
+                <p class="text-xl text-premium-slate max-w-2xl mx-auto">
+                    Flexible pricing options designed to fit your study schedule and budget
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+                <!-- Daily Plan -->
+                <div class="premium-card rounded-2xl p-6 premium-shadow hover:scale-105 transition-all duration-300">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-premium-navy mb-2">Daily Pass</h3>
+                        <div class="text-3xl font-bold text-premium-gold mb-4">₹50</div>
+                        <p class="text-premium-slate mb-6">Perfect for trial or occasional study</p>
+                        <ul class="space-y-2 mb-6 text-sm text-premium-slate">
+                            <li>✓ 12 hours access</li>
+                            <li>✓ WiFi included</li>
+                            <li>✓ Basic amenities</li>
+                        </ul>
+                        <button class="w-full bg-premium-gold hover:bg-orange-500 text-white py-2 rounded-lg font-semibold transition-colors" data-event="click:handleRazorpayPayment" data-plan="daily">
+                            Pay Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Weekly Plan -->
+                <div class="premium-card rounded-2xl p-6 premium-shadow hover:scale-105 transition-all duration-300">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-premium-navy mb-2">Weekly Plan</h3>
+                        <div class="text-3xl font-bold text-premium-gold mb-4">₹300</div>
+                        <p class="text-premium-slate mb-6">Great for short-term goals</p>
+                        <ul class="space-y-2 mb-6 text-sm text-premium-slate">
+                            <li>✓ 7 days unlimited</li>
+                            <li>✓ All facilities</li>
+                            <li>✓ Locker access</li>
+                        </ul>
+                        <button class="w-full bg-premium-gold hover:bg-orange-500 text-white py-2 rounded-lg font-semibold transition-colors" data-event="click:handleRazorpayPayment" data-plan="weekly">
+                            Pay Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Monthly Plan -->
+                <div class="premium-card rounded-2xl p-6 premium-shadow hover:scale-105 transition-all duration-300 border-2 border-premium-gold relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-premium-gold text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        Popular
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-premium-navy mb-2">Monthly Plan</h3>
+                        <div class="text-3xl font-bold text-premium-gold mb-4">₹1000</div>
+                        <p class="text-premium-slate mb-6">Most popular choice</p>
+                        <ul class="space-y-2 mb-6 text-sm text-premium-slate">
+                            <li>✓ 30 days unlimited</li>
+                            <li>✓ Premium facilities</li>
+                            <li>✓ Reserved seating</li>
+                            <li>✓ Free refreshments</li>
+                        </ul>
+                        <button class="w-full bg-premium-gold hover:bg-orange-500 text-white py-2 rounded-lg font-semibold transition-colors" data-event="click:handleRazorpayPayment" data-plan="monthly">
+                            Pay Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Quarterly Plan -->
+                <div class="premium-card rounded-2xl p-6 premium-shadow hover:scale-105 transition-all duration-300">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-premium-navy mb-2">Quarterly</h3>
+                        <div class="text-3xl font-bold text-premium-gold mb-4">₹2500</div>
+                        <p class="text-premium-slate mb-6">Best value for serious students</p>
+                        <ul class="space-y-2 mb-6 text-sm text-premium-slate">
+                            <li>✓ 90 days unlimited</li>
+                            <li>✓ All premium features</li>
+                            <li>✓ Priority support</li>
+                            <li>✓ Study materials</li>
+                        </ul>
+                        <button class="w-full bg-premium-gold hover:bg-orange-500 text-white py-2 rounded-lg font-semibold transition-colors" data-event="click:handleRazorpayPayment" data-plan="quarterly">
+                            Pay Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Plans Row -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <!-- Half Yearly -->
+                <div class="premium-card rounded-2xl p-6 premium-shadow hover:scale-105 transition-all duration-300">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-premium-navy mb-2">Half Yearly</h3>
+                        <div class="text-3xl font-bold text-premium-gold mb-4">₹4500</div>
+                        <p class="text-premium-slate mb-6">Long-term commitment</p>
+                        <button class="w-full bg-premium-gold hover:bg-orange-500 text-white py-2 rounded-lg font-semibold transition-colors" data-event="click:handleRazorpayPayment" data-plan="halfyearly">
+                            Pay Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Yearly Plan -->
+                <div class="premium-card rounded-2xl p-6 premium-shadow hover:scale-105 transition-all duration-300">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-premium-navy mb-2">Yearly Plan</h3>
+                        <div class="text-3xl font-bold text-premium-gold mb-4">₹8000</div>
+                        <p class="text-premium-slate mb-6">Maximum savings</p>
+                        <button class="w-full bg-premium-gold hover:bg-orange-500 text-white py-2 rounded-lg font-semibold transition-colors" data-event="click:handleRazorpayPayment" data-plan="yearly">
+                            Pay Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Custom Plan -->
+                <div class="premium-card rounded-2xl p-6 premium-shadow hover:scale-105 transition-all duration-300">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-premium-navy mb-2">Custom Plan</h3>
+                        <div class="text-3xl font-bold text-premium-gold mb-4">₹?</div>
+                        <p class="text-premium-slate mb-6">Tailored to your needs</p>
+                        <button class="w-full bg-premium-navy hover:bg-slate-700 text-white py-2 rounded-lg font-semibold transition-colors" data-event="click:handleCustomPlan">
+                            Contact Us
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: PricingSection -->
+
+    <!-- @COMPONENT: RegistrationForm -->
+    <section id="register" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-premium-navy mb-4">Join Our Community</h2>
+                <p class="text-xl text-premium-slate">
+                    Fill out the form below to register for library membership
+                </p>
+            </div>
+            
+            <div class="premium-card rounded-2xl p-8 premium-shadow">
+                <form class="space-y-6" data-implementation="Should validate form before submission">
+                    <!-- Personal Information -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-premium-navy mb-2">Full Name *</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-premium-gold focus:border-transparent transition-all" placeholder="Enter your full name" data-mock="true">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-premium-navy mb-2">Email Address *</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-premium-gold focus:border-transparent transition-all" placeholder="your.email@example.com" data-mock="true">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-premium-navy mb-2">Phone Number *</label>
+                            <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-premium-gold focus:border-transparent transition-all" placeholder="+91 9876543210" data-mock="true">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-premium-navy mb-2">Date of Birth *</label>
+                            <input type="date" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-premium-gold focus:border-transparent transition-all" data-mock="true">
+                        </div>
+                    </div>
+                    
+                    <!-- Academic Information -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-premium-navy mb-2">Education Level *</label>
+                            <select required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-premium-gold focus:border-transparent transition-all" data-mock="true">
+                                <option value="">Select education level</option>
+                                <option value="undergraduate">Undergraduate</option>
+                                <option value="graduate">Graduate</option>
+                                <option value="postgraduate">Postgraduate</option>
+                                <option value="professional">Professional Course</option>
+                                <option value="competitive">Competitive Exams</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-premium-navy mb-2">Field of Study</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-premium-gold focus:border-transparent transition-all" placeholder="e.g., Engineering, Medicine, UPSC" data-mock="true">
+                        </div>
+                    </div>
+                    
+                    <!-- Address Information -->
+                    <div>
+                        <label class="block text-sm font-semibold text-premium-navy mb-2">Address *</label>
+                        <textarea required rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-premium-gold focus:border-transparent transition-all" placeholder="Enter your complete address" data-mock="true"></textarea>
+                    </div>
+                    
+                    <!-- Emergency Contact -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-premium-navy mb-2">Emergency Contact Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-premium-gold focus:border-transparent transition-all" placeholder="Guardian/Parent name" data-mock="true">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-premium-navy mb-2">Emergency Contact Number</label>
+                            <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-premium-gold focus:border-transparent transition-all" placeholder="+91 9876543210" data-mock="true">
+                        </div>
+                    </div>
+                    
+                    <!-- Library Rules Agreement -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-premium-navy mb-4">Library Rules & Regulations</h3>
+                        <div class="space-y-2 text-sm text-premium-slate mb-4">
+                            <p>• Maintain complete silence in study areas</p>
+                            <p>• Mobile phones must be kept on silent mode</p>
+                            <p>• No outside food or drinks allowed</p>
+                            <p>• Keep your belongings secure; library is not responsible for loss</p>
+                            <p>• Smoking and consumption of alcohol strictly prohibited</p>
+                            <p>• Follow the dress code (decent attire required)</p>
+                            <p>• Membership is non-transferable and non-refundable</p>
+                        </div>
+                        <label class="flex items-center space-x-3">
+                            <input type="checkbox" required class="w-5 h-5 text-premium-gold rounded focus:ring-premium-gold" data-mock="true">
+                            <span class="text-sm text-premium-navy">I agree to abide by all library rules and regulations *</span>
+                        </label>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="bg-premium-gold hover:bg-orange-500 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 premium-shadow" data-event="click:handleRegistration">
+                            Complete Registration
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: RegistrationForm -->
+
+    <!-- @COMPONENT: StatisticsSection -->
+    <section class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Trusted by Students</h2>
+                <p class="text-xl text-gray-300">
+                    Join thousands of successful students who chose us as their study partner
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- @STATE: counters:object = {activeStudents: 0, studySeats: 0, userRating: 0, satisfaction: 0} -->
+                <div class="text-center text-white">
+                    <div class="text-5xl font-bold text-premium-gold mb-2" data-bind="counters.activeStudents">500+</div>
+                    <p class="text-xl">Active Students</p>
+                </div>
+                <div class="text-center text-white">
+                    <div class="text-5xl font-bold text-premium-gold mb-2" data-bind="counters.studySeats">200+</div>
+                    <p class="text-xl">Study Seats</p>
+                </div>
+                <div class="text-center text-white">
+                    <div class="text-5xl font-bold text-premium-gold mb-2" data-bind="counters.userRating">4.8★</div>
+                    <p class="text-xl">User Rating</p>
+                </div>
+                <div class="text-center text-white">
+                    <div class="text-5xl font-bold text-premium-gold mb-2" data-bind="counters.satisfaction">98%</div>
+                    <p class="text-xl">Satisfaction Rate</p>
+                </div>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="grid md:grid-cols-4 gap-6 mt-16">
+                <div class="text-center text-white">
+                    <i class="fas fa-building text-3xl text-premium-gold mb-3"></i>
+                    <p>Professional study environment</p>
+                </div>
+                <div class="text-center text-white">
+                    <i class="fas fa-money-bill-wave text-3xl text-premium-gold mb-3"></i>
+                    <p>Affordable membership plans</p>
+                </div>
+                <div class="text-center text-white">
+                    <i class="fas fa-eye-slash text-3xl text-premium-gold mb-3"></i>
+                    <p>No hidden charges or fees</p>
+                </div>
+                <div class="text-center text-white">
+                    <i class="fas fa-headset text-3xl text-premium-gold mb-3"></i>
+                    <p>24/7 customer support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: StatisticsSection -->
+
+    <!-- @COMPONENT: TestimonialsSection -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-premium-navy mb-4">Student Success Stories</h2>
+                <p class="text-xl text-premium-slate max-w-2xl mx-auto">
+                    Hear what our students have to say about their experience at Aspirants Library
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- @MAP: testimonials.map(testimonial => ( -->
+                <div class="premium-card rounded-xl p-6 premium-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user-graduate text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-premium-navy" data-bind="testimonial.name">Rajesh Kumar</h4>
+                            <p class="text-sm text-premium-slate" data-bind="testimonial.role">UPSC Aspirant</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fas fa-star text-premium-gold"></i>
+                        <i class="fas fa-star text-premium-gold"></i>
+                        <i class="fas fa-star text-premium-gold"></i>
+                        <i class="fas fa-star text-premium-gold"></i>
+                        <i class="fas fa-star text-premium-gold"></i>
+                    </div>
+                    <p class="text-premium-slate" data-bind="testimonial.content">"Aspirants Library has been my second home for the past 2 years. The peaceful environment and excellent facilities helped me crack my prelims. Highly recommended!"</p>
+                </div>
+                
+                <div class="premium-card rounded-xl p-6 premium-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user-md text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-premium-navy">Priya Sharma</h4>
+                            <p class="text-sm text-premium-slate">Medical Student</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fas fa-star text-premium-gold"></i>
+                        <i class="fas fa-star text-premium-gold"></i>
+                        <i class="fas fa-star text-premium-gold"></i>
+                        <i class="fas fa-star text-premium-gold"></i>
+                        <i class="fas fa-star text-premium-gold"></i>
+                    </div>
+                    <p class="text-premium-slate">"The 24/7 access is a game-changer for me. During exam season, I could study late nights without any hassle. The security and cleanliness are top-notch."</p>
+                </div>
+                
+                <div class="premium-card rounded-xl p-6 premium-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-premium-emerald rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-laptop-code text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-premium-navy">Arjun Patel</h4>
+                            <p class="text-sm text-premium-slate">Engineering Graduate</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fas fa-star text-premium-gold"></i>
+                        <i class="fas fa-star text-premium-gold"></i>
+                        <i class="fas fa-star text-premium-gold"></i>
+                        <i class="fas fa-star text-premium-gold"></i>
+                        <i class="fas fa-star text-premium-gold"></i>
+                    </div>
+                    <p class="text-premium-slate">"Perfect place for competitive exam preparation. The silence, comfortable seating, and fast WiFi made my GATE preparation much more effective."</p>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: TestimonialsSection -->
+
+    <!-- @COMPONENT: ContactSection -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-premium-navy mb-4">Visit Us Today</h2>
+                <p class="text-xl text-premium-slate">
+                    Ready to Begin Your Journey? Get in touch with us
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Operating Hours -->
+                <div class="premium-card rounded-xl p-6 premium-shadow text-center">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-premium-navy mb-3">Operating Hours</h3>
+                    <p class="text-premium-slate mb-2">Monday - Sunday: 24 Hours</p>
+                    <p class="text-premium-slate text-sm">Open 365 Days a Year</p>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="premium-card rounded-xl p-6 premium-shadow text-center">
+                    <div class="w-16 h-16 bg-premium-emerald rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-premium-navy mb-3">Contact Information</h3>
+                    <p class="text-premium-slate mb-1">Phone: <a href="tel:+919548411150" class="text-premium-gold hover:underline">9548411150</a></p>
+                    <p class="text-premium-slate mb-1">Email: <a href="mailto:aspirantlibrary2002@gmail.com" class="text-premium-gold hover:underline">aspirantlibrary2002@gmail.com</a></p>
+                    <p class="text-premium-slate text-sm">WhatsApp: <a href="https://wa.me/919548411150" class="text-premium-gold hover:underline">9548411150</a></p>
+                </div>
+                
+                <!-- Location -->
+                <div class="premium-card rounded-xl p-6 premium-shadow text-center">
+                    <div class="w-16 h-16 bg-premium-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-premium-navy mb-3">Location</h3>
+                    <p class="text-premium-slate mb-2">Near Pepper's Pizza</p>
+                    <p class="text-premium-slate mb-3">Main Commercial Complex</p>
+                    <a href="#" class="text-premium-gold hover:underline text-sm" data-event="click:openGoogleMaps">View on Google Maps →</a>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="text-center mt-16">
+                <h3 class="text-2xl font-bold text-premium-navy mb-4">Ready to Begin Your Journey?</h3>
+                <p class="text-premium-slate mb-8">Join hundreds of successful students who chose Aspirants Library as their study partner</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:+919548411150" class="bg-premium-gold hover:bg-orange-500 text-white px-8 py-4 rounded-xl font-semibold transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
+                        <i class="fas fa-phone"></i>
+                        <span>Call us at 9548411150</span>
+                    </a>
+                    <a href="https://wa.me/919548411150" class="bg-premium-emerald hover:bg-green-600 text-white px-8 py-4 rounded-xl font-semibold transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp us - Quick Response</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-premium-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-premium-gold to-orange-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">ASPIRANTS</h3>
+                            <p class="text-sm text-gray-400 -mt-1">LIBRARY</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Your Gateway to Academic Excellence. Experience the perfect study environment designed for serious learners.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#facilities" class="hover:text-premium-gold transition-colors">Facilities</a></li>
+                        <li><a href="#pricing" class="hover:text-premium-gold transition-colors">Pricing</a></li>
+                        <li><a href="#testimonials" class="hover:text-premium-gold transition-colors">Reviews</a></li>
+                        <li><a href="#register" class="hover:text-premium-gold transition-colors">Register</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>24/7 Study Access</li>
+                        <li>High-Speed WiFi</li>
+                        <li>Quiet Study Zones</li>
+                        <li>Secure Lockers</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Phone: 9548411150</li>
+                        <li>Email: aspirantlibrary2002@gmail.com</li>
+                        <li>Near Pepper's Pizza</li>
+                        <li>Main Commercial Complex</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 Aspirants Library. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Simple scroll animations
+        (function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all cards and sections
+            document.querySelectorAll('.premium-card, .animate-slide-up, .animate-fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(40px)';
+                el.style.transition = 'all 0.6s ease-out';
+                observer.observe(el);
+            });
+
+            // Counter animation for statistics
+            const counters = document.querySelectorAll('[data-bind*="counters"]');
+            const statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // TODO: Implement counter animation logic
+                        entry.target.style.animation = 'counter 2s ease-out';
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => {
+                statsObserver.observe(counter);
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // TODO: Implement Razorpay payment integration
+            // TODO: Implement form validation and submission
+            // TODO: Implement authentication system
+            // TODO: Implement admin panel access control
+        })();
+    </script>
+</body>
+</html>

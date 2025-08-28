@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspirants Library - Your Gateway to Academic Excellence</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>ASPIRANTS <span class="text-red">LIBRARY</span></h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#facilities" class="nav-link">Facilities</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="btn btn-primary" onclick="showLoginModal()">Login</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                ASPIRANTS<br>
+                <span class="text-red">LIBRARY</span>
+            </h1>
+            <p class="hero-subtitle">Your Gateway to Academic Excellence</p>
+            <p class="hero-description">
+                Experience the perfect study environment designed for serious learners. Our 
+                state-of-the-art facility combines modern amenities with the tranquility you need 
+                to achieve your academic goals.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="window.location.href='registration.html'">Get Started</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('contact')">Contact Us</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="building-illustration">
+                <div class="building-structure">
+                    <div class="building-floor"></div>
+                    <div class="building-floor"></div>
+                    <div class="building-floor"></div>
+                    <div class="building-lights"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon blue">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>24/7 Access</h3>
+                    <p>Study anytime that suits your schedule</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon orange">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>High-Speed WiFi</h3>
+                    <p>Fast internet for research and learning</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon yellow">
+                        <i class="fas fa-volume-mute"></i>
+                    </div>
+                    <h3>Quiet Zones</h3>
+                    <p>Peaceful environment for focused study</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Access Section -->
+    <section class="user-access">
+        <div class="container">
+            <h2 class="section-title">Choose Your Path</h2>
+            <p class="section-subtitle">Select your role to access your personalized dashboard and features</p>
+            
+            <div class="access-grid">
+                <div class="access-card">
+                    <div class="access-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Student Access</h3>
+                    <p>Book seats, track study hours, manage your learning journey, and access exclusive student resources.</p>
+                    <ul class="access-features">
+                        <li><i class="fas fa-check"></i> Real-time seat booking</li>
+                        <li><i class="fas fa-check"></i> Study progress tracking</li>
+                        <li><i class="fas fa-check"></i> Digital wallet & payments</li>
+                        <li><i class="fas fa-check"></i> Achievement badges</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="showStudentLogin()">Student Login / Register</button>
+                </div>
+                
+                <div class="access-card">
+                    <div class="access-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Admin Access</h3>
+                    <p>Manage library operations, monitor occupancy, handle student accounts, and access comprehensive analytics.</p>
+                    <ul class="access-features">
+                        <li><i class="fas fa-check"></i> Dashboard & analytics</li>
+                        <li><i class="fas fa-check"></i> Student management</li>
+                        <li><i class="fas fa-check"></i> Booking oversight</li>
+                        <li><i class="fas fa-check"></i> Financial reports</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="showAdminLogin()">Admin Login</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities">
+        <div class="container">
+            <h2 class="section-title">World-Class Facilities</h2>
+            <p class="section-subtitle">Everything you need for an optimal learning experience under one roof</p>
+            
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Extensive Resources</h3>
+                    <p>Access to thousands of books, journals, and digital resources for comprehensive study material.</p>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Modern Infrastructure</h3>
+                    <p>LED lighting, climate control, and ergonomic furniture designed for extended study sessions.</p>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Environment</h3>
+                    <p>CCTV monitoring, secure lockers, and 24/7 security ensures your safety and peace of mind.</p>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>Refreshment Zone</h3>
+                    <p>On-site cafeteria and vending machines to keep you energized during study breaks.</p>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Parking Available</h3>
+                    <p>Convenient parking space for both two-wheelers and four-wheelers at affordable rates.</p>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Focus Zones</h3>
+                    <p>Dedicated silent study areas, group discussion rooms, and individual cabins for varied study needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Flexible Pricing Plans</h2>
+            <p class="section-subtitle">Choose a plan that fits your study schedule and budget</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic Plan</h3>
+                    <div class="price">₹600</div>
+                    <p class="duration">6 AM - 10 PM</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Basic access</li>
+                        <li><i class="fas fa-check"></i> Study materials</li>
+                        <li><i class="fas fa-check"></i> Support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="makePayment('Basic Plan', 600)">Choose Plan</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>Quarterly Premium</h3>
+                    <div class="price">₹1,800</div>
+                    <p class="duration">3 months</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 3 months premium</li>
+                        <li><i class="fas fa-check"></i> All features</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> 24/7 access</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="makePayment('Quarterly Premium', 1800)">Choose Plan</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Premium Plan</h3>
+                    <div class="price">₹1,000</div>
+                    <p class="duration">Full access</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Premium access</li>
+                        <li><i class="fas fa-check"></i> All materials</li>
+                        <li><i class="fas fa-check"></i> 24/7 support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="makePayment('Premium Plan', 1000)">Choose Plan</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Morning</h3>
+                    <div class="price">₹600</div>
+                    <p class="duration">6 AM - 2 PM</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 8 hours access</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Locker facility</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="makePayment('Basic Plan', 600)">Choose Plan</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Standard</h3>
+                    <div class="price">₹700</div>
+                    <p class="duration">12 PM - 8 PM</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 8 hours access</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Locker facility</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="makePayment('Standard Plan', 700)">Choose Plan</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Evening</h3>
+                    <div class="price">₹600</div>
+                    <p class="duration">2 PM - 10 PM</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 8 hours access</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Locker facility</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="makePayment('Basic Plan', 600)">Choose Plan</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Trial Plan</h3>
+                    <div class="price">₹150</div>
+                    <p class="duration">7 days</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 7 days access</li>
+                        <li><i class="fas fa-check"></i> Basic features</li>
+                        <li><i class="fas fa-check"></i> Basic support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="makePayment('Trial Plan', 150)">Choose Plan</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Quarterly Basic</h3>
+                    <div class="price">₹1,100</div>
+                    <p class="duration">3 months</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 3 months access</li>
+                        <li><i class="fas fa-check"></i> All basic features</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="makePayment('Quarterly Basic', 1100)">Choose Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Active Students</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">91</div>
+                    <div class="stat-label">Study Seats</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.8★</div>
+                    <div class="stat-label">User Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+            
+            <div class="trust-badges">
+                <div class="badge">Professional study environment</div>
+                <div class="badge">Affordable membership plans</div>
+                <div class="badge">No hidden charges or fees</div>
+                <div class="badge">24/7 customer support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Student Success Stories</h2>
+            <p class="section-subtitle">Hear what our students have to say about their experience at Aspirants Library</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h4>Aayush</h4>
+                    <p class="testimonial-role">Web Developer</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Aspirants Library provided the perfect environment for learning web development. The 24/7 access and high-speed internet helped me complete multiple projects and land my dream job as a web developer!"
+                    </p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>Yogesh Sharma</h4>
+                    <p class="testimonial-role">Government Job Aspirant</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "The peaceful environment and excellent facilities at Aspirants Library helped me stay focused during my government exam preparation. The study atmosphere here is unmatched!"
+                    </p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>Tushar</h4>
+                    <p class="testimonial-role">SSC Aspirant</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Perfect place for SSC preparation! The quiet zones and comfortable seating made my study sessions more productive. Successfully cleared my SSC exam thanks to this amazing library!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Visit Us Today</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Operating Hours</h3>
+                    <p>Monday - Sunday: 24 Hours</p>
+                    <p>Open 365 Days a Year</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Contact Information</h3>
+                    <p>Phone: <a href="tel:+919548411150">9548411150</a></p>
+                    <p>Email: <a href="mailto:aspirantlibrary2002@gmail.com">aspirantlibrary2002@gmail.com</a></p>
+                    <p>WhatsApp: <a href="https://wa.me/919548411150">9548411150</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Near Pepper's Pizza</p>
+                    <p>Main Commercial Complex</p>
+                    <button class="btn btn-secondary" onclick="openMaps()">View on Google Maps →</button>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <h3>Ready to Begin Your Journey?</h3>
+                <p>Join hundreds of successful students who chose Aspirants Library as their study partner</p>
+                <div class="cta-buttons">
+                    <a href="tel:+919548411150" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call us at 9548411150
+                    </a>
+                    <a href="https://wa.me/919548411150" class="btn btn-secondary">
+                        <i class="fab fa-whatsapp"></i> WhatsApp us - Quick Response
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Choose Login Type</h2>
+            <div class="login-options">
+                <button class="btn btn-primary" onclick="showStudentLogin()">Student Login</button>
+                <button class="btn btn-secondary" onclick="showAdminLogin()">Admin Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Login Modal -->
+    <div id="studentLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Student Login</h2>
+            <form id="studentLoginForm">
+                <div class="form-group">
+                    <input type="email" id="studentEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="studentPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p class="text-center">
+                Don't have an account? 
+                <a href="registration.html" class="text-red">Register here</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <input type="text" id="adminUsername" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="adminPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

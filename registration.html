@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - Aspirants Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .registration-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+        
+        .registration-form {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .form-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .form-header p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-group-full {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.2);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-top: 4px;
+        }
+        
+        .checkbox-group label {
+            margin-bottom: 0;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+        
+        .library-rules {
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid rgba(255, 68, 68, 0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .library-rules h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .library-rules ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .library-rules li {
+            padding: 0.3rem 0;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .library-rules .fas {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-gray);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .registration-form {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .form-header h1 {
+                font-size: 2rem;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <div class="registration-form">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+            
+            <div class="form-header">
+                <h1>Student <span class="text-red">Registration</span></h1>
+                <p>Join Aspirants Library and start your academic journey</p>
+            </div>
+            
+            <form id="registrationForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date of Birth *</label>
+                        <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gender">Gender *</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="aadhaar">Aadhaar Number *</label>
+                        <input type="text" id="aadhaar" name="aadhaar" required pattern="[0-9]{12}" maxlength="12">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fatherName">Father's Name *</label>
+                        <input type="text" id="fatherName" name="fatherName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="qualification">Educational Qualification *</label>
+                        <select id="qualification" name="qualification" required>
+                            <option value="">Select Qualification</option>
+                            <option value="12th">12th Pass</option>
+                            <option value="graduation">Graduation</option>
+                            <option value="post-graduation">Post Graduation</option>
+                            <option value="diploma">Diploma</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="examPreparation">Exam Preparation</label>
+                        <select id="examPreparation" name="examPreparation">
+                            <option value="">Select Exam (Optional)</option>
+                            <option value="upsc">UPSC</option>
+                            <option value="ssc">SSC</option>
+                            <option value="banking">Banking</option>
+                            <option value="railway">Railway</option>
+                            <option value="gate">GATE</option>
+                            <option value="cat">CAT</option>
+                            <option value="neet">NEET</option>
+                            <option value="jee">JEE</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group form-group-full">
+                        <label for="address">Full Address *</label>
+                        <textarea id="address" name="address" required placeholder="Enter your complete address"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="emergencyContact">Emergency Contact *</label>
+                        <input type="tel" id="emergencyContact" name="emergencyContact" required pattern="[0-9]{10}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="emergencyRelation">Emergency Contact Relation *</label>
+                        <input type="text" id="emergencyRelation" name="emergencyRelation" required placeholder="e.g., Father, Mother, Brother">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" required minlength="6">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required minlength="6">
+                    </div>
+                </div>
+                
+                <div class="library-rules">
+                    <h3><i class="fas fa-book"></i> Library Rules & Regulations</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Maintain complete silence in study areas</li>
+                        <li><i class="fas fa-check"></i> Mobile phones must be on silent mode</li>
+                        <li><i class="fas fa-check"></i> No eating or drinking in study zones</li>
+                        <li><i class="fas fa-check"></i> Keep your study area clean and organized</li>
+                        <li><i class="fas fa-check"></i> Follow the dress code (formal/semi-formal)</li>
+                        <li><i class="fas fa-check"></i> Show respect to fellow students and staff</li>
+                        <li><i class="fas fa-check"></i> Library card must be carried at all times</li>
+                        <li><i class="fas fa-check"></i> Report any issues to the administration immediately</li>
+                        <li><i class="fas fa-check"></i> No refund for membership once purchased</li>
+                        <li><i class="fas fa-check"></i> Library management reserves the right to suspend/terminate membership for misconduct</li>
+                    </ul>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                    <label for="agreeTerms">
+                        I agree to the <strong>Library Rules & Regulations</strong> mentioned above and understand that violation of any rule may result in suspension or termination of my membership.
+                    </label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agreeData" name="agreeData" required>
+                    <label for="agreeData">
+                        I consent to the collection and processing of my personal data for library membership and academic purposes.
+                    </label>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="window.location.href='index.html'">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i>
+                        Register Now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const userData = {};
+            
+            for (let [key, value] of formData.entries()) {
+                userData[key] = value;
+            }
+            
+            // Combine first and last name
+            userData.name = userData.firstName + ' ' + userData.lastName;
+            
+            // Validate form
+            const errors = validateRegistrationForm(userData);
+            
+            if (errors.length > 0) {
+                showAlert(errors.join('\n'), 'error');
+                return;
+            }
+            
+            try {
+                // Save user registration
+                const savedUser = saveUserRegistration(userData);
+                
+                showAlert('Registration successful! Please login to continue.', 'success');
+                
+                // Redirect to login after 2 seconds
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+                
+            } catch (error) {
+                showAlert(error.message, 'error');
+            }
+        });
+        
+        // Real-time validation
+        document.getElementById('confirmPassword').addEventListener('blur', function() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = this.value;
+            
+            if (password !== confirmPassword) {
+                this.style.borderColor = '#ff4444';
+                showAlert('Passwords do not match', 'error');
+            } else {
+                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            }
+        });
+        
+        // Aadhaar number formatting
+        document.getElementById('aadhaar').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\D/g, '').substring(0, 12);
+        });
+        
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\D/g, '').substring(0, 10);
+        });
+        
+        document.getElementById('emergencyContact').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\D/g, '').substring(0, 10);
+        });
+    </script>
+</body>
+</html>
